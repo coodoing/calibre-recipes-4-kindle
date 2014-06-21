@@ -8,8 +8,6 @@ PHPSCRIPT=`which php`
 CALIBRE_PATH=`which calibre`
 EBOOK_CONVERTER_PATH=`which ebook-convert`
 EBOOK_VIEWER_PATH=`which ebook-viewer`
-#pwd
-#$#表示传递给此Shell脚本的参数个数  
 if [ $# -eq 0 ]   
 then  
  echo "Usage: $0 <convert.recipe> "   
