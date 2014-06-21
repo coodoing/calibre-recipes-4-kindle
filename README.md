@@ -20,9 +20,9 @@ Avoiding to install `calibre` from source, check [linux install ](http://calibre
 ```
 # Structure
 
-When you write your own calibre recipe, you need to inherit `parse_index` method, and the return structure likes :
+When you write your own calibre recipe, you need to override `parse_index` method, and the return structure of this method likes :
 
-**Element, Type; Sub-Element, Sub-Type**
+**Element, Type; Sub-Element, Sub-Type, Sub-Element, Sub-Type**
 >* Book, List; Volumn, Tuple
 >* Volumn, Tuple; VolumnTitle, String, Chapters, List
 >* Chapters, List; Chapter, Map
