@@ -9,14 +9,16 @@ calibre recipes for kindle paperwhite
 
 # Install
 Avoiding to install `calibre` from source, check [linux install ](http://calibre-ebook.com/download_linux ) for more details.
+
 >* Debian/Ubuntu：
 ```
-apt-get install calibre
+  apt-get install calibre
 ```
+
 >* RedHat/Fedora/CentOS：
 
 ```
-yum -y install calibre
+  yum -y install calibre
 ```
 
 # Structure
@@ -32,10 +34,10 @@ When you write your own calibre recipe, you need to inherit `parse_index` method
 # Usage
 
 ```
-ebook-convert Swift.recipe Swift.mobi
-ebook-viewer Swift.mobi
+  ebook-convert Swift.recipe Swift.mobi
+  ebook-viewer Swift.mobi
 ```
 or
 ```
-sh autorun.py Swift.recipe
+  sh autorun.py Swift.recipe
 ```
