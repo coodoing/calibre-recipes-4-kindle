@@ -27,6 +27,7 @@ When you write your own calibre recipe, you need to inherit `parse_index` method
 >* Volumn, Tuple; VolumnTitle, String, Chapters, List
 >* Chapters, List; Chapter, Map
 >* Chapter, Map; ChapterTitle,String, ChapterUrl, String
+
 # Usage
 
 ```
