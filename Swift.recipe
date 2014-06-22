@@ -1,12 +1,10 @@
 #-*-coding=utf-8-*-
-
 import os, sys
 from calibre.web.feeds.recipes import BasicNewsRecipe
 
-class Swift(BasicNewsRecipe):
- 
+class Swift(BasicNewsRecipe): 
     title = 'Swift Programming Guide'
-    description = '' 
+    description = 'Swift Programming' 
     cover_url = 'https://devimages.apple.com.edgekey.net/swift/images/swift-hero.png'
     base_url = 'http://www.ituring.com.cn/minibook/10700'
     url_prefix = 'http://www.ituring.com.cn/'
@@ -20,28 +18,20 @@ class Swift(BasicNewsRecipe):
     def parse_index(self):
         soup = self.index_to_soup(self.base_url) 
         div = soup.find('div', { 'class': 'minibook-list' })
-        print(div)
-        #sys.exit(0)
- 
         articles = []
         for link in div.findAll('a'):#,{'class':'question-hyperlink'}):            
-            til = self.get_title(link)
+            title = self.get_title(link)
             url = self.url_prefix + link['href']
-            a = { 'title': til, 'url': url }
- 
-            articles.append(a)
- 
-        ans = [('Swift Programming Guide', articles)]
- 
+            a = { 'title': title, 'url': url } 
+            articles.append(a) 
+        ans = [('Swift Programming Guide', articles)] 
         return ans
 
     def postprocess_html(self, soup, first_fetch):
         first = True
-
         for text in soup.findAll('div', { 'class': 'post-text' }):
             if first:
                 first = False
             else:
                 text.extract()
-
         return soup

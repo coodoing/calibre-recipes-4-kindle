@@ -1,14 +1,11 @@
 #-*-coding=utf-8-*-
-
 import os,sys
 from calibre.web.feeds.recipes import BasicNewsRecipe
 
-class Haskell(BasicNewsRecipe):
- 
+class Haskell(BasicNewsRecipe): 
     title = 'Parallel and Concurrent Programming in Haskell'
-    description = 'Haskell programming'
-    cover_url = 'http://orm-other.s3.amazonaws.com/parallelconcurrenthaskellsplash/parallelconcurrenthaskell.jpg'
- 
+    description = 'Haskell'
+    cover_url = 'http://orm-other.s3.amazonaws.com/parallelconcurrenthaskellsplash/parallelconcurrenthaskell.jpg' 
     base_url = 'http://chimera.labs.oreilly.com/books/1230000000929/'
     no_stylesheets = True
     keep_only_tags = [{ 'class': 'chapter' }]
@@ -20,16 +17,13 @@ class Haskell(BasicNewsRecipe):
         soup = self.index_to_soup(self.base_url + 'index.html')
         #print(soup.prettify())
         div = soup.find('div', { 'class': 'toc' })
-        #print(div)
- 
+        #print(div) 
         articles = []
         for link in div.findAll('a'):
             if '#' in link['href']:
-                continue
- 
+                continue 
             if not 'ch' in link['href']:
-                continue
- 
+                continue 
             til = self.get_title(link)
             url = self.base_url + link['href']
             a = { 'title': til, 'url': url }
